@@ -107,8 +107,7 @@ public final class ObjectScan {
             assert element instanceof JsonObject;
             JsonObject object = (JsonObject) element;
 
-            String name = object.get("name").getAsPrimitive()
-                    .orElseThrow().getAsString();
+            String name = object.get("name").asString();
             JsonElement value = object.get("value");
 
             root.set(name, value);

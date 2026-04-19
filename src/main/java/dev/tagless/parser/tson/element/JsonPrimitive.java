@@ -1,5 +1,6 @@
 package dev.tagless.parser.tson.element;
 
+import dev.tagless.parser.tson.FunctionChain;
 import dev.tagless.parser.tson.element.exception.PrimitiveCastException;
 import org.jetbrains.annotations.NotNull;
 
@@ -248,22 +249,3 @@ public final class JsonPrimitive extends JsonElement {
     }
 }
 
-interface FunctionChain<P, V> {
-
-    V apply(final P param);
-
-    default FunctionChain<P, V> except(final Class<? extends Throwable> type,
-                                       final FunctionChain<P, V> other) {
-        return v -> {
-            try {
-                return this.apply(v);
-            } catch (Throwable ex) {
-                if (type.isInstance(ex)) {
-                    return other.apply(v);
-                }
-
-                throw ex;
-            }
-        };
-    }
-}

@@ -9,13 +9,12 @@ import dev.tagless.parser.tson.serializer.writer.ObjectWriter;
 import dev.tagless.parser.tson.serializer.writer.PrimitiveWriter;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-import java.io.StringWriter;
-import java.io.Writer;
+import java.io.*;
 
 /**
  * JSON writer from a JSON token
  */
+@SuppressWarnings("unused")
 public abstract class JsonWriter {
 
     protected final HydratorChain chain;
@@ -85,10 +84,21 @@ public abstract class JsonWriter {
      * @throws IOException if there's a problem while writing
      */
     @NotNull
-    public String write() throws IOException {
+    public final String write() throws IOException {
         try (StringWriter writer = new StringWriter()) {
             this.write(writer);
             return writer.toString();
+        }
+    }
+
+    /**
+     * Write the token into the specified stream
+     * @param stream the stream to write to
+     * @throws IOException if there's a problem while writing
+     */
+    public final void write(final @NotNull OutputStream stream) throws IOException {
+        try (OutputStreamWriter writer = new OutputStreamWriter(stream)) {
+            this.write(writer);
         }
     }
 

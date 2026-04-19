@@ -13,9 +13,7 @@ affecting too much in memory.
 import dev.tagless.parser.tson.element.JsonObject;
 import dev.tagless.parser.tson.hydrator.Hydrator;
 import dev.tagless.parser.tson.parser;
-import dev.tagless.parser.tson.parser.JsonLexer;
-import dev.tagless.parser.tson.parser.JsonProcessor;
-import dev.tagless.parser.tson.parser.token.Token;
+import dev.tagless.parser.tson.parser.lexer.JsonLexer;
 
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;

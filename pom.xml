@@ -6,7 +6,7 @@
 
     <groupId>dev.tagless</groupId>
     <artifactId>parser-tson</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
@@ -22,4 +22,15 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>tagless-releases</id>
+            <url>https://nexus.tagfull.dev/repository/tagless-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>tagless-snapshots</id>
+            <url>https://nexus.tagfull.dev/repository/tagless-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
