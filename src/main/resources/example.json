@@ -1,0 +1,32 @@
+{
+	"hello": "world",
+	"another": "producción",
+	"null": null,
+	"number": 3215,
+	"boolean": true,
+	"sub": {
+		"key": "value",
+		"list": [
+			"Item",
+			251,
+			true,
+			false,
+			null,
+			[
+				{
+					"key": [
+						"a",
+						"b",
+						"c"
+					]
+				}
+			],
+			{
+				"a": "b"
+			},
+			{
+				"key": "value"
+			}
+		]
+	}
+}
