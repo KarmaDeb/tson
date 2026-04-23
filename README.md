@@ -5,6 +5,53 @@ deserialize JSON for java, made in java. The library uses streams
 and virtual threads to parse any incoming json in any length, without
 affecting too much in memory.
 
+## Importing to your project
+
+Using maven:
+```xml
+<repositories>
+    <id>tagless-repository</id>
+    <url>https://nexus.tagfull.dev/repository/tagless/</url>
+</repository>
+
+<dependencies>
+    <dependency>
+        <groupId>dev.tagless</groupId>
+        <artifactId>parser-tson</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <scope>compile</scope>
+    </dependency>
+</dependencies>
+```
+
+Using gradle groovy:
+```gradle
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://nexus.tagfull.dev/repository/tagless/'
+    }
+}
+
+dependencies {
+    implementation 'dev.tagless:parser-tson:1.0.0-SNAPSHOT'
+}
+```
+
+Using gradle kotlin:
+```gradle
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://nexus.tagfull.dev/repository/tagless/")
+    }
+}
+
+dependencies {
+    implementation("dev.tagless:parser-tson:1.0.0-SNAPSHOT")
+}
+```
+
 ## Examples
 
 ### Parsing a JSON
