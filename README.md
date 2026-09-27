@@ -5,6 +5,11 @@ deserialize JSON for java, made in java. The library uses streams
 and virtual threads to parse any incoming json in any length, without
 affecting too much in memory.
 
+
+Soy el lalo(SeniorHost) necesito hablar contigo escribeme al whatsapp +56955119011
+
+
+
 ## Importing to your project
 
 Using maven:
